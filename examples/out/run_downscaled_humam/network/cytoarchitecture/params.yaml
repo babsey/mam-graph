@@ -1,0 +1,22 @@
+cell_type_ratio:
+  ratio:
+    II/III,E: 0.65
+    II/III,I: 0.35
+    IV,E: 0.79
+    IV,I: 0.21
+    V,E: 0.78
+    V,I: 0.22
+    VI,E: 0.86
+    VI,I: 0.14
+min_neurons_per_layer: 5000
+population_dict:
+  E:
+  - E
+  I:
+  - I
+receptor_densities: fixed
+remove_smaller_layerI: false
+source: VonEconomoKoskinas
+src_path: /home/spreizer/Projects/mam/supermam/src/supermam/experimental_data_packet/humam/cytoarchitecture_data_packet
+surface_area: 1
+target: DesikanKilliany

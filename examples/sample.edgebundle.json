@@ -1,0 +1,159 @@
+{
+ "nodes": [
+  {
+   "id": "::"
+  },
+  {
+   "id": "::V1",
+   "parent": "::",
+   "label": "V1"
+  },
+  {
+   "id": "::V2",
+   "parent": "::",
+   "label": "V2"
+  },
+  {
+   "id": "::MT",
+   "parent": "::",
+   "label": "MT"
+  },
+  {
+   "id": "::FEF",
+   "parent": "::",
+   "label": "FEF"
+  },
+  {
+   "id": "V1-2/3",
+   "area": "V1",
+   "label": "V1 L2/3",
+   "parent": "::V1"
+  },
+  {
+   "id": "V1-4",
+   "area": "V1",
+   "label": "V1 L4",
+   "parent": "::V1"
+  },
+  {
+   "id": "V1-5",
+   "area": "V1",
+   "label": "V1 L5",
+   "parent": "::V1"
+  },
+  {
+   "id": "V1-6",
+   "area": "V1",
+   "label": "V1 L6",
+   "parent": "::V1"
+  },
+  {
+   "id": "V2-2/3",
+   "area": "V2",
+   "label": "V2 L2/3",
+   "parent": "::V2"
+  },
+  {
+   "id": "V2-4",
+   "area": "V2",
+   "label": "V2 L4",
+   "parent": "::V2"
+  },
+  {
+   "id": "V2-5",
+   "area": "V2",
+   "label": "V2 L5",
+   "parent": "::V2"
+  },
+  {
+   "id": "V2-6",
+   "area": "V2",
+   "label": "V2 L6",
+   "parent": "::V2"
+  },
+  {
+   "id": "MT-2/3",
+   "area": "MT",
+   "label": "MT L2/3",
+   "parent": "::MT"
+  },
+  {
+   "id": "MT-4",
+   "area": "MT",
+   "label": "MT L4",
+   "parent": "::MT"
+  },
+  {
+   "id": "MT-5",
+   "area": "MT",
+   "label": "MT L5",
+   "parent": "::MT"
+  },
+  {
+   "id": "MT-6",
+   "area": "MT",
+   "label": "MT L6",
+   "parent": "::MT"
+  },
+  {
+   "id": "FEF-2/3",
+   "area": "FEF",
+   "label": "FEF L2/3",
+   "parent": "::FEF"
+  },
+  {
+   "id": "FEF-4",
+   "area": "FEF",
+   "label": "FEF L4",
+   "parent": "::FEF"
+  },
+  {
+   "id": "FEF-5",
+   "area": "FEF",
+   "label": "FEF L5",
+   "parent": "::FEF"
+  },
+  {
+   "id": "FEF-6",
+   "area": "FEF",
+   "label": "FEF L6",
+   "parent": "::FEF"
+  }
+ ],
+ "links": [
+  {
+   "source": "V1-4",
+   "target": "V2-4"
+  },
+  {
+   "source": "V2-2/3",
+   "target": "MT-4"
+  },
+  {
+   "source": "MT-5",
+   "target": "FEF-6"
+  },
+  {
+   "source": "FEF-5",
+   "target": "V1-6"
+  },
+  {
+   "source": "V1-2/3",
+   "target": "MT-4"
+  },
+  {
+   "source": "V2-5",
+   "target": "FEF-4"
+  }
+ ],
+ "options": {
+  "size": 500,
+  "beta": 0.85,
+  "showLabels": true,
+  "nodeRadius": 2.5,
+  "labelPadding": 0,
+  "directed": true,
+  "colorLinks": true,
+  "zoom": true
+ }
+}

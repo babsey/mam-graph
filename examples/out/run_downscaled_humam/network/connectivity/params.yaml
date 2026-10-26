@@ -1,0 +1,24 @@
+FLN: 0.86
+SLN_FB: 0.35
+SLN_FF: 0.65
+Z_i: 0.93
+a0: -0.152
+a1: -1.534
+con_path:
+  distances_from_fiber_length: distances_from_fiber_length.csv
+  src_path: /home/spreizer/Projects/mam/supermam/src/supermam/experimental_data_packet/humam/connectivity_data_packet/streamline_counts
+  streamline_counts: streamline_counts.csv
+conn_frac_adjusted_path: typeiii_conn_frac/conn_frac_adjusted.csv
+connectivity: HcpDesikanKilliany
+lmbda: 160.0
+microcircuit_path:
+  K_ext: K_ext.csv
+  conn_probs: conn_probs.csv
+  num_neurons: num_neurons.csv
+  src_path: /home/spreizer/Projects/mam/supermam/src/supermam/experimental_data_packet/humam/connectivity_data_packet/microcircuit
+rho_syn: 660000000
+src_path: /home/spreizer/Projects/mam/supermam/src/supermam/experimental_data_packet/humam/connectivity_data_packet
+synapse_cellbody_prob_path: synapse_cellbody_probability.csv
+vol_path:
+  src_path: /home/spreizer/Projects/mam/supermam/src/supermam/experimental_data_packet/humam/connectivity_data_packet/volume
+  volume: area_volumes.csv

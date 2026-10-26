@@ -1,0 +1,130 @@
+.jp-ForceGraph {
+  width: 100%;
+  overflow: hidden;
+}
+
+.jp-ForceGraph-svg {
+  display: block;
+  width: 100%;
+  cursor: grab;
+}
+
+.jp-ForceGraph-links line {
+  stroke: var(--jp-ui-font-color3, #999);
+  stroke-opacity: 0.6;
+}
+
+.jp-ForceGraph-arrow {
+  fill: var(--jp-ui-font-color3, #999);
+}
+
+.jp-ForceGraph-nodes circle {
+  stroke: var(--jp-layout-color0, #fff);
+  stroke-width: 1.5px;
+  cursor: pointer;
+}
+
+.jp-ForceGraph-labels text {
+  font-family: var(--jp-ui-font-family, sans-serif);
+  font-size: 10px;
+  fill: var(--jp-ui-font-color1, #333);
+  pointer-events: none;
+}
+
+/* Hierarchical edge bundling */
+
+.jp-EdgeBundle {
+  width: 100%;
+  overflow: hidden;
+}
+
+.jp-EdgeBundle-svg {
+  display: block;
+  width: 100%;
+}
+
+.jp-EdgeBundle-links path {
+  fill: none;
+  stroke: var(--jp-ui-font-color2, #777);
+  stroke-opacity: 0.4;
+}
+
+.jp-EdgeBundle-nodes text {
+  font-family: var(--jp-ui-font-family, sans-serif);
+  font-size: 10px;
+  fill: var(--jp-ui-font-color1, #333);
+}
+
+.jp-EdgeBundle-nodes g {
+  cursor: pointer;
+}
+
+.jp-EdgeBundle-focus .jp-EdgeBundle-links path {
+  stroke-opacity: 0.06;
+}
+
+.jp-EdgeBundle-focus .jp-EdgeBundle-nodes text {
+  fill-opacity: 0.4;
+}
+
+.jp-EdgeBundle-links path.jp-mod-outgoing,
+.jp-EdgeBundle-links path.jp-mod-incoming,
+.jp-EdgeBundle-links path.jp-mod-linked {
+  stroke-opacity: 1;
+}
+
+.jp-EdgeBundle-links path.jp-mod-outgoing {
+  stroke: var(--jp-error-color1, #d32f2f) !important;
+}
+
+.jp-EdgeBundle-links path.jp-mod-incoming,
+.jp-EdgeBundle-links path.jp-mod-linked {
+  stroke: var(--jp-brand-color1, #1976d2) !important;
+}
+
+.jp-EdgeBundle-nodes g.jp-mod-active text,
+.jp-EdgeBundle-nodes g.jp-mod-outgoing text,
+.jp-EdgeBundle-nodes g.jp-mod-incoming text,
+.jp-EdgeBundle-nodes g.jp-mod-linked text {
+  fill-opacity: 1;
+  font-weight: bold;
+}
+
+.jp-EdgeBundle-nodes g.jp-mod-outgoing text {
+  fill: var(--jp-error-color1, #d32f2f);
+}
+
+.jp-EdgeBundle-nodes g.jp-mod-incoming text,
+.jp-EdgeBundle-nodes g.jp-mod-linked text {
+  fill: var(--jp-brand-color1, #1976d2);
+}
+
+.jp-EdgeBundle-arcs g {
+  cursor: pointer;
+}
+
+.jp-EdgeBundle-arc {
+  stroke: var(--jp-layout-color0, #fff);
+  stroke-width: 1px;
+}
+
+.jp-EdgeBundle-arcGuide {
+  fill: none;
+  stroke: none;
+}
+
+.jp-EdgeBundle-arcs text {
+  font-family: var(--jp-ui-font-family, sans-serif);
+  font-size: 9px;
+  font-weight: 600;
+  fill: #fff;
+  pointer-events: none;
+}
+
+.jp-EdgeBundle-focus .jp-EdgeBundle-arcs g {
+  opacity: 0.35;
+}
+
+.jp-EdgeBundle-focus .jp-EdgeBundle-arcs g.jp-mod-active {
+  opacity: 1;
+}

@@ -1,0 +1,54 @@
+K_scaling: 0.004
+N_scaling: 0.004
+connection_params:
+  PSP_e: 0.1
+  PSP_ext: 0.1
+  PSP_rel: 0.1
+  g: -5.0
+  p_transmit: 1.0
+  psp_matrix_path: null
+delay_params:
+  delay_e: 1.5
+  delay_i: 0.75
+  delay_rel: 0.5
+  distribution: lognormal_clipped
+  interarea_speed: 3.5
+fullscale_rates_path: simulated_data/base_theory_rates.pkl
+input_params:
+  eta_ext: 1.1
+neurons:
+  E:
+    model: iaf_psc_exp
+    params:
+      C_m: 220.0
+      E_L: -70.0
+      V_reset: -70.0
+      V_th: -45.0
+      t_ref: 2.0
+      tau_m: 10.0
+      tau_syn_ex: 2.0
+      tau_syn_in: 2.0
+  I:
+    model: iaf_psc_exp
+    params:
+      C_m: 100.0
+      E_L: -70.0
+      V_reset: -70.0
+      V_th: -45.0
+      t_ref: 2.0
+      tau_m: 10.0
+      tau_syn_ex: 2.0
+      tau_syn_in: 2.0
+outpath: out/run_downscaled_humam/network
+scaling_factors_external:
+  scaling5E: 1.05
+  scaling6E: 1.15
+scaling_factors_recurrent:
+  cc_scalingEtoE: 1.0
+  cc_scalingEtoI: 2.0
+  local_scaling4Eto23E: 2.0
+  local_scaling5EtoI: 1.0
+  local_scalingEtoI: 1.0
+scaling_type: linear
+single_spike: {}
+src_path: /home/spreizer/Projects/mam/supermam/src/supermam/experimental_data_packet/humam/network_data_packet

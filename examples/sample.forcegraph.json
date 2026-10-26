@@ -1,0 +1,3 @@
+{"nodes":[{"id":"a","group":1},{"id":"b","group":1},{"id":"c","group":2},{"id":"d","group":2}],
+ "links":[{"source":"a","target":"b"},{"source":"b","target":"c"},{"source":"c","target":"d","value":4},{"source":"d","target":"a"}],
+ "options":{"showLabels":true,"directed":true}}

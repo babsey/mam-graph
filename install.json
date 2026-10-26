@@ -1,0 +1,5 @@
+{
+  "packageManager": "python",
+  "packageName": "mam_graph",
+  "uninstallInstructions": "Use your Python package manager (uv remove mam-graph) to uninstall the package mam_graph"
+}

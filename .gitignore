@@ -1,0 +1,10 @@
+node_modules/
+lib/
+*.tsbuildinfo
+mam_graph/labextension/
+mam_graph/_version.py
+.venv/
+__pycache__/
+dist/
+.yarn/
+.ipynb_checkpoints/

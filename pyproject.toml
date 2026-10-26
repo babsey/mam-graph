@@ -1,0 +1,76 @@
+[build-system]
+requires = [
+    "hatchling>=1.5.0",
+    "jupyterlab>=4.0.0,<5",
+    "hatch-nodejs-version>=0.3.2",
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "mam_graph"
+readme = "README.md"
+license = { text = "BSD-3-Clause" }
+requires-python = ">=3.10"
+classifiers = [
+    "Framework :: Jupyter",
+    "Framework :: Jupyter :: JupyterLab",
+    "Framework :: Jupyter :: JupyterLab :: 4",
+    "Framework :: Jupyter :: JupyterLab :: Extensions",
+    "Framework :: Jupyter :: JupyterLab :: Extensions :: Prebuilt",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+dynamic = ["version", "description", "authors", "urls", "keywords"]
+
+[tool.hatch.version]
+source = "nodejs"
+
+[tool.hatch.metadata.hooks.nodejs]
+fields = ["description", "authors", "urls", "keywords"]
+
+[tool.hatch.build.targets.sdist]
+artifacts = ["mam_graph/labextension"]
+exclude = [".github", "binder", "node_modules"]
+
+[tool.hatch.build.targets.wheel.shared-data]
+"mam_graph/labextension" = "share/jupyter/labextensions/mam-graph"
+
+[tool.hatch.build.hooks.version]
+path = "mam_graph/_version.py"
+
+[tool.hatch.build.hooks.jupyter-builder]
+dependencies = ["hatch-jupyter-builder>=0.5"]
+build-function = "hatch_jupyter_builder.npm_builder"
+ensured-targets = [
+    "mam_graph/labextension/static/style.js",
+    "mam_graph/labextension/package.json",
+]
+skip-if-exists = ["mam_graph/labextension/static/style.js"]
+
+[tool.hatch.build.hooks.jupyter-builder.build-kwargs]
+build_cmd = "build:prod"
+npm = ["jlpm"]
+
+[tool.hatch.build.hooks.jupyter-builder.editable-build-kwargs]
+build_cmd = "install:extension"
+npm = ["jlpm"]
+source_dir = "src"
+build_dir = "mam_graph/labextension"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "ipython>=8.39.0",
+    "jupyterlab>=4.6.4",
+    "networkx>=3.4.2",
+    "pytest>=9.1.1",
+    "ruff>=0.17.2",
+]
+
+[tool.ruff]
+extend-exclude = ["mam_graph/_version.py", "node_modules"]

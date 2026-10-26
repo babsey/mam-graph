@@ -1,0 +1,62 @@
+{
+  "name": "mam-graph",
+  "version": "0.1.0",
+  "description": "JupyterLab MIME renderer for d3 force-directed graphs",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension",
+    "d3",
+    "force-directed-graph",
+    "hierarchical-edge-bundling"
+  ],
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Sebastian Spreizer",
+    "email": "spreizer@web.de"
+  },
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,js,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "style": "style/index.css",
+  "scripts": {
+    "build": "jlpm build:lib && jlpm build:labextension:dev",
+    "build:prod": "jlpm clean && jlpm build:lib:prod && jlpm build:labextension",
+    "build:labextension": "jupyter labextension build .",
+    "build:labextension:dev": "jupyter labextension build --development True .",
+    "build:lib": "tsc --sourceMap",
+    "build:lib:prod": "tsc",
+    "clean": "jlpm clean:lib",
+    "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
+    "clean:labextension": "rimraf mam_graph/labextension mam_graph/_version.py",
+    "clean:all": "jlpm clean:lib && jlpm clean:labextension",
+    "install:extension": "jlpm build",
+    "watch": "run-p watch:src watch:labextension",
+    "watch:src": "tsc -w --sourceMap",
+    "watch:labextension": "jupyter labextension watch ."
+  },
+  "dependencies": {
+    "@jupyterlab/rendermime-interfaces": "^3.10.0",
+    "@lumino/widgets": "^2.3.0",
+    "d3": "^7.9.0"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "^4.0.0",
+    "@types/d3": "^7.4.3",
+    "npm-run-all2": "^7.0.1",
+    "rimraf": "^5.0.1",
+    "typescript": "~5.5.4"
+  },
+  "sideEffects": [
+    "style/*.css",
+    "style/index.js"
+  ],
+  "styleModule": "style/index.js",
+  "jupyterlab": {
+    "mimeExtension": true,
+    "outputDir": "mam_graph/labextension"
+  }
+}
